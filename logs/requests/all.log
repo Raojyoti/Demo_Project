@@ -175,3 +175,7 @@ info: ::1 - - [16/May/2023:09:21:15 +0000] "POST /api/v1/users HTTP/1.1" 400 56 
 
 info: ::1 - - [16/May/2023:09:21:42 +0000] "POST /api/v1/users HTTP/1.1" 201 127 "-" "PostmanRuntime/7.32.2"
 
+info: ::1 - - [16/May/2023:09:35:39 +0000] "POST /api/v1/users/login HTTP/1.1" 400 59 "-" "PostmanRuntime/7.32.2"
+
+info: ::1 - - [16/May/2023:09:36:16 +0000] "POST /api/v1/users/login HTTP/1.1" 202 212 "-" "PostmanRuntime/7.32.2"
+

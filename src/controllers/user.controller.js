@@ -22,3 +22,21 @@ export const registerUser = async (req, res, next) => {
     });
   }
 };
+
+//extra userlogin
+export const userlogin = async (req, res, next) => {
+  try {
+    const data = await UserService.userlogin(req.body);
+    res.status(HttpStatus.ACCEPTED).json({
+      code: HttpStatus.ACCEPTED,
+      Token: data,
+      message: 'User login successfully'
+    });
+  } catch (error) {
+    res.status(HttpStatus.BAD_REQUEST).json({
+      code: HttpStatus.BAD_REQUEST,
+      message: `${error}`
+    });
+  }
+};
+

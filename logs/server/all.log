@@ -176,3 +176,7 @@ error:
      {"timestamp":"2023-05-16T09:21:15.190Z"}
 info: Server started at http://localhost:8000/api/v1/ {"timestamp":"2023-05-16T09:21:29.880Z"}
 info: Connected to the database. {"timestamp":"2023-05-16T09:21:30.214Z"}
+info: Server started at http://localhost:8000/api/v1/ {"timestamp":"2023-05-16T09:35:09.292Z"}
+info: Connected to the database. {"timestamp":"2023-05-16T09:35:09.757Z"}
+info: Server started at http://localhost:8000/api/v1/ {"timestamp":"2023-05-16T09:36:11.823Z"}
+info: Connected to the database. {"timestamp":"2023-05-16T09:36:12.078Z"}
