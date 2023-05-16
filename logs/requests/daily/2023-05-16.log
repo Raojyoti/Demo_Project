@@ -1,0 +1,14 @@
+info: ::1 - - [16/May/2023:09:17:41 +0000] "GET /api/v1/user HTTP/1.1" 404 47 "-" "PostmanRuntime/7.32.2"
+
+info: ::1 - - [16/May/2023:09:17:49 +0000] "GET /api/v1/users HTTP/1.1" 404 47 "-" "PostmanRuntime/7.32.2"
+
+info: ::1 - - [16/May/2023:09:19:11 +0000] "GET /api/v1/users HTTP/1.1" 404 47 "-" "PostmanRuntime/7.32.2"
+
+info: ::1 - - [16/May/2023:09:19:16 +0000] "GET /api/v1/users HTTP/1.1" 404 47 "-" "PostmanRuntime/7.32.2"
+
+info: ::1 - - [16/May/2023:09:19:25 +0000] "GET /api/v1/users/ HTTP/1.1" 404 47 "-" "PostmanRuntime/7.32.2"
+
+info: ::1 - - [16/May/2023:09:21:15 +0000] "POST /api/v1/users HTTP/1.1" 400 56 "-" "PostmanRuntime/7.32.2"
+
+info: ::1 - - [16/May/2023:09:21:42 +0000] "POST /api/v1/users HTTP/1.1" 201 127 "-" "PostmanRuntime/7.32.2"
+
