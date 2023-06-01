@@ -3,7 +3,7 @@ import * as NoteService from '../services/note.service';
 
 
 /**
- * Controller to create a new user
+ * Controller to create a new notes
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
@@ -26,7 +26,7 @@ export const addNotes = async (req, res, next) => {
 };
 
 /*
- * Controller to get all users available
+ * Controller to get all notes available
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
@@ -48,7 +48,7 @@ export const getAllNotes = async (req, res, next) => {
 };
 
 /**
- * Controller to get a single user
+ * Controller to get a single note
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
@@ -71,7 +71,7 @@ export const getNote = async (req, res, next) => {
 
 
 /**
- * Controller to update a user
+ * Controller to update a note
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
@@ -93,7 +93,7 @@ export const updateNote = async (req, res, next) => {
 };
 
 /**
- * Controller to delete a single user
+ * Controller to delete a note
  * @param  {object} req - request object
  * @param {object} res - response object
  * @param {Function} next
@@ -105,6 +105,23 @@ export const deleteNote = async (req, res, next) => {
       code: HttpStatus.OK,
       data: [],
       message: 'User deleted successfully'
+    });
+  } catch (error) {
+    res.status(HttpStatus.BAD_REQUEST).json({
+      code: HttpStatus.BAD_REQUEST,
+      message: `${error}`
+    });
+  }
+};
+
+// Controller to Archive Note
+export const archiveNote = async (req, res, next) => {
+  try {
+    const data = await NoteService.archiveNote(req.params.id);
+    res.status(HttpStatus.ACCEPTED).json({
+      code: HttpStatus.ACCEPTED,
+      data: data,
+      message: 'Note archive successfully'
     });
   } catch (error) {
     res.status(HttpStatus.BAD_REQUEST).json({

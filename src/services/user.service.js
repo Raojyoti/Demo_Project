@@ -34,3 +34,9 @@ export const userlogin = async ( userdetails) => {
   }
   return token;
 };
+
+//get all users
+export const getAllUsers = async () => {
+  const data = await User.findAll();
+  return data;
+};

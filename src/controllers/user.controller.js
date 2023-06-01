@@ -40,3 +40,21 @@ export const userlogin = async (req, res, next) => {
   }
 };
 
+/**
+ * Controller to get all users available
+ * @param  {object} req - request object
+ * @param {object} res - response object
+ * @param {Function} next
+ */
+export const getAllUsers = async (req, res, next) => {
+  try {
+    const data = await UserService.getAllUsers();
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: data,
+      message: 'All users fetched successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};

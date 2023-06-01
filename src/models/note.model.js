@@ -1,5 +1,4 @@
 'use strict';
-//const { optional } = require('@hapi/joi');
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class note extends Model {
@@ -11,9 +10,15 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       description: DataTypes.STRING,
       color:DataTypes.STRING,
-      isDeleted: DataTypes.BOOLEAN,
-      createdBy:DataTypes.STRING,
-      isArchieved: DataTypes.STRING,
+      isDeleted: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      userId: DataTypes.STRING,
+      isArchived: {
+        type:DataTypes.BOOLEAN,
+        defaultValue: false
+      }
     },
     {
       sequelize,

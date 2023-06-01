@@ -11,7 +11,7 @@ export const getAllNotes = async () => {
 export const getNote = async (id) => {
     const findId = await Note.findOne({ where: { id: id }});
     if(!findId){
-        throw new Error(`$Details of ide => {id} is not present `);
+        throw new Error(`Details of id => ${id} is not present `);
        }
   const data = await Note.findByPk(id);
   return data;
@@ -41,3 +41,11 @@ export const deleteNote = async (id) => {
   return '';
 };
 
+// archeive note
+export const archiveNote = async (id) => {
+  const data = await Note.findByPk(id);
+  console.log("Before archived ================>",data);
+  data.isArchived == false ? data.update({isArchived: true}) :data.update({isArchived: false})
+  console.log("After archived ================>",data);
+  return data;
+};
