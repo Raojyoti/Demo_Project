@@ -130,3 +130,20 @@ export const archiveNote = async (req, res, next) => {
     });
   }
 };
+
+// Controller to Trash Note
+export const trashNote = async (req, res, next) => {
+  try {
+    const data = await NoteService.trashNote(req.params.id);
+    res.status(HttpStatus.ACCEPTED).json({
+      code: HttpStatus.ACCEPTED,
+      data: data,
+      message: 'Note trash successfully'
+    });
+  } catch (error) {
+    res.status(HttpStatus.BAD_REQUEST).json({
+      code: HttpStatus.BAD_REQUEST,
+      message: `${error}`
+    });
+  }
+};

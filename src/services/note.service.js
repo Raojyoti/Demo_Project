@@ -49,3 +49,12 @@ export const archiveNote = async (id) => {
   console.log("After archived ================>",data);
   return data;
 };
+
+// trashed note
+export const trashNote = async (id) => {
+  const data = await Note.findByPk(id);
+  console.log("Before trash ================>",data);
+  data.isDeleted == false ? data.update({isDeleted: true}) :data.update({isDeleted: false})
+  console.log("After trash ================>",data);
+  return data;
+};
