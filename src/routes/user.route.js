@@ -14,4 +14,7 @@ router.post('/login', userController.userlogin);
 //route to get all users
 router.get('', userController.getAllUsers);
 
+//route to reset password
+router.put('/resetPass', userAuth, userController.resetPassword);
+
 export default router;

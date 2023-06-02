@@ -40,3 +40,14 @@ export const getAllUsers = async () => {
   const data = await User.findAll();
   return data;
 };
+
+//reset password
+export const resetPassword = async (body, email) => {
+  const saltRounds = 10;
+  const hashPassword = bcrypt.hashSync(body.password, saltRounds);
+  body.password = hashPassword;
+  // const data = await User.update(body, {where: { email: email }});
+  // return data;
+   await User.update(body, {where: { email: email }});
+   return body;
+};
